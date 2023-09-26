@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="website.css">
+    <script src="website.js"></script>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,100;9..40,200;9..40,300;9..40,400;9..40,500;9..40,600;9..40,700;9..40,800;9..40,900;9..40,1000&display=swap">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+
+    <!-- cursore -->
+    <script src="https://unpkg.com/mouse-follower@1/dist/mouse-follower.min.js"></script>   
+    <link rel="stylesheet" href="https://unpkg.com/mouse-follower@1/dist/mouse-follower.min.css">
+      
+
+      
+</head>
+
+<body>
+
+    <header >
+        <div data-cursor="-blue" class="OuterMagneticRangeLink OuterMagneticRange">
+          <a href="MoscaFolio.html">
+            <div class="newbuttonLink magnetic" data-strength="70">
+              <div class="textblock">Mosca</div>
+            </div>
+          </a>
+        </div>
+          
+
+        <div class="MenuContainer" >
+            <span>Dark Mode</span>
+            <div class="switchWraper" data-cursor="-blue">
+                  <label class="switch">
+                      <input type="checkbox" class="checkbox"/>
+                      <svg viewBox="0 0 38 24" filter="url(#goo)">
+                          <circle class="default" cx="12" cy="12" r="8" />
+                          <circle class="dot" cx="26" cy="12" r="8" />
+                          <circle class="drop" cx="25" cy="-1" r="2" />
+                      </svg>
+                  </label>
+              </div>
+           <span >
+            Menu
+           </span>
+            
+            <svg  data-cursor-stick data-cursor="-interest"  class="ham hamRotate ham8" viewBox="0 0 100 100" width="40" height="40" onclick="this.classList.toggle('active')">
+                <path
+                      class="line top"
+                      d="m 30,33 h 40 c 3.722839,0 7.5,3.126468 7.5,8.578427 0,5.451959 -2.727029,8.421573 -7.5,8.421573 h -20" />
+                <path
+                      class="line middle"
+                      d="m 30,50 h 40" />
+                <path
+                      class="line bottom"
+                      d="m 70,67 h -40 c 0,0 -7.5,-0.802118 -7.5,-8.365747 0,-7.563629 7.5,-8.634253 7.5,-8.634253 h 20" />
+              </svg>
+        </div>
+
+
+    </header>
+
+    <main>
+
+        <div class="WelcomeTextContainer">
+            <div>
+            <div class="about_text_wrap">
+                <div class="about_text">
+
+
+                <div class="about_text_pWrap" style="margin-bottom: -5%;">
+                    <div class="about_text_p" >Explore a collection</div>
+                </div>
+                <div class="about_text_pWrap" style="margin-top: -5%;">
+                    <div class="about_text_p" >of usefull websites</div>
+                </div>
+
+                </div>
+            </div>
+            </div>
+        </div>
+
+        <script>
+
+
+        </script>
+
+      <div class="WebsiteContainer">
+        <div class="changeButtons">
+            <span>Favorites</span> 
+            <div class="OuterMagneticRange">
+                <div class="newbutton magnetic" style="background-color: #2f66ed;" data-strength="10" data-strength-text="10" onclick="showOnly('.content1', 0)">
+                  <div class="hovercolor"></div>
+                  <div class="textblock">Essentials</div>
+                </div>
+              </div>
+
+              <div class="OuterMagneticRange">
+                <div class="newbutton magnetic" data-strength="10" data-strength-text="10" onclick="showOnly('.content2',1)">
+                  <div class="hovercolor"></div>
+                  <div class="textblock">Coding Tools</div>
+                </div>
+              </div>
+
+              <div class="OuterMagneticRange">
+                <div class="newbutton magnetic" data-strength="10" data-strength-text="10" onclick="showOnly('.content3',2)">
+                  <div class="hovercolor"></div>
+                  <div class="textblock">Foto/Vide Tools</div>
+                </div>
+              </div>
+
+              <div class="OuterMagneticRange">
+                <div class="newbutton magnetic" data-strength="10" data-strength-text="10" onclick="showOnly('.content4',3)">
+                  <div class="hovercolor"></div>
+                  <div class="textblock">PDF/Other Tools</div>
+                </div>
+              </div>
+        </div>
+        
+        <div class="content1 content" style="display: flex;">
+            <div data-cursor-text="Open" class="square" style="background-color: #bbe0dd;"><a target="_blank" href="https://chat.openai.com/"><img src="https://firebasestorage.googleapis.com/v0/b/projectwebsites-63cf7.appspot.com/o/ChatGpt.png?alt=media&token=f50931f6-b382-4467-bc7f-602d8f822bf5">ChatGpt</a> 
+              <span style="background-color: #bbe0dd;"> ChatGPT is a large language model chatbot developed by OpenAI. It is a powerful tool that can be used for a variety of purposes, including generating creative text formats, translating languages, and writing different kinds of creative content. </span>
+            </div>
+            <div data-cursor-text="Open" class="square" style="background-color: #f9d4d2;"><a target="_blank" href="https://convertio.co/"><img src="https://firebasestorage.googleapis.com/v0/b/projectwebsites-63cf7.appspot.com/o/Convertio.png?alt=media&token=8507675b-f4fa-4523-aad6-3b3538514fbf">Convert.Io</a>
+              <span style="background-color: #f9d4d2;"> Convertio is an online file converter that allows users to convert between over 200 file formats, including images, videos, audio, and documents. It is a convenient tool for anyone who needs to convert files for work or personal use.</span>
+            </div>
+            <div data-cursor-text="Open" class="square" style="background-color: #ced4d9;"><a target="_blank" href="https://www.deepl.com/translator"><img src="https://firebasestorage.googleapis.com/v0/b/projectwebsites-63cf7.appspot.com/o/Deepl.png?alt=media&token=bbb61389-8eb2-4564-82b3-6a0b11b8cf40">DeepL</a>
+              <span style="background-color: #ced4d9;"> DeepL is a machine translation service that offers high-quality translations between over 26 languages. It is a popular choice for businesses and individuals who need to translate documents or websites.</span>
+            </div>
+            <div data-cursor-text="Open" class="square" style="background-color: #b3e4d5;"><a target="_blank" href="https://temp-mail.org/"><img src="https://firebasestorage.googleapis.com/v0/b/projectwebsites-63cf7.appspot.com/o/Tempmail.png?alt=media&token=4958fb84-0daf-4fa2-a59f-8fb0faec6e69">Tempmail</a>
+              <span style="background-color: #b3e4d5;"> Tempmail is a temporary email service that allows users to create an email address that expires after a specified period of time. It is a useful tool for protecting privacy or for signing up for online services that require an email address.</span>
+            </div>
+            <div data-cursor-text="Open" class="square" style="background-color: #eeeffe;"><a target="_blank" href="https://picwish.com/"><img src="https://firebasestorage.googleapis.com/v0/b/projectwebsites-63cf7.appspot.com/o/picwish.png?alt=media&token=f83888d0-e5b4-45eb-ac22-ccd67413d871">Picwish</a>
+              <span style="background-color: #eeeffe;"> Picwish is an online photo editing tool that allows users to create custom images and designs. It offers a variety of features, including filters, stickers, and text. Picwish is a popular choice for creating social media posts, marketing materials, and more.</span>
+            </div>
+        </div>
+        <div class="content2 content">
+            <div data-cursor-text="Open" class="square" style="background-color: #dadbfc;"><a target="_blank" href="https://10015.io/tools/html-minifier"><img src="https://firebasestorage.googleapis.com/v0/b/projectwebsites-63cf7.appspot.com/o/html-minifier.svg?alt=media&token=f6cd4631-70f3-41fc-9f4e-81e81732b40c">HTML Minifier</a>
+              <span style="background-color: #dadbfc;">This tool allows users to minify HTML code, which can help to improve website performance by reducing the size of the HTML file. It does this by removing unnecessary characters, such as whitespace, comments, and line breaks</span>
+            </div>
+            <div data-cursor-text="Open" class="square" style="background-color: #dadbfc;"><a target="_blank" href="https://10015.io/tools/css-minifier"><img src="https://firebasestorage.googleapis.com/v0/b/projectwebsites-63cf7.appspot.com/o/css-minifier.svg?alt=media&token=844c38b6-dc12-47d2-bc02-04270b2baa4c">CSS Minifier</a>
+              <span style="background-color: #dadbfc;">This tool allows users to minify CSS code, which can also help to improve website performance. It does this by removing unnecessary characters, such as whitespace, comments, and line breaks.</span>
+            </div>
+            <div data-cursor-text="Open" class="square" style="background-color: #dadbfc;"><a target="_blank" href="https://10015.io/tools/javascript-minifier"><img src="https://firebasestorage.googleapis.com/v0/b/projectwebsites-63cf7.appspot.com/o/javascript-minifier.svg?alt=media&token=d4358a4e-eedd-4c9c-8a55-187b17ad940f">JS Minifier</a>
+              <span style="background-color: #dadbfc;">This tool allows users to minify JavaScript code, which can help to improve website performance. It does this by removing unnecessary characters, such as whitespace, comments, and line breaks. </span>
+            </div>
+            <div data-cursor-text="Open" class="square" style="background-color: #d8e7fd;"><a target="_blank" href="https://www.cssportal.com/less-to-css/"><img src="https://firebasestorage.googleapis.com/v0/b/projectwebsites-63cf7.appspot.com/o/cssicon.png?alt=media&token=569467fa-79df-40d3-9125-e016f009e152">CSS converter</a>
+              <span style="background-color: #d8e7fd;">Converts CSS from one format to another, such as from SCSS to CSS or from CSS to SASS. It is a free and easy-to-use tool that can help you save time and effort when working with CSS.</span>
+            </div>
+            <div data-cursor-text="Open" class="square" style="background-color: #bbe0dd;"><a target="_blank" href="https://platform.openai.com/playground/p/default-explain-code"><img src="https://firebasestorage.googleapis.com/v0/b/projectwebsites-63cf7.appspot.com/o/ChatGpt.png?alt=media&token=f50931f6-b382-4467-bc7f-602d8f822bf5">GPT 4 Explain code</a>
+              <span style="background-color: #bbe0dd;">The OpenAI Code Explainer is a tool that can help you understand how code works with GPT-4 model. It does this by generating a natural language explanation of the code, based on the code's structure and meaning.</span>
+            </div>
+        </div>
+        <div class="content3 content">
+          <div data-cursor-text="Open" class="square" style="background-color: #c5e3e0;"><a target="_blank" href="https://www.photopea.com/"><img src="https://firebasestorage.googleapis.com/v0/b/projectwebsites-63cf7.appspot.com/o/photopea-logo-3121691088.png?alt=media&token=4cb16b1a-484b-4cf6-bac2-315167d8a4b5">Photopea</a>
+            <span style="background-color: #c5e3e0;">Photopea is a free and online Photoshop alternative that allows you to edit photos, create graphics, and design websites.</span>
+          </div>
+          <div data-cursor-text="Open" class="square" style="background-color: #a4edf3;"><a target="_blank" href="https://imagecompressor.com/"><img src="https://firebasestorage.googleapis.com/v0/b/projectwebsites-63cf7.appspot.com/o/ImageCompressor.png?alt=media&token=d72c2a3b-ff3d-4468-a971-59492252362c">Image Compressor</a>
+            <span style="background-color: #a4edf3;">ImageCompressor is a free online image compressor that uses a smart combination of the best optimization and lossy compression algorithms to shrink JPEG, GIF, and PNG images to the minimum possible size while keeping the required level of quality.</span>
+          </div>
+          <div data-cursor-text="Open" class="square" style="background-color: #c3dcf5;"><a target="_blank" href="https://fontawesome.com/search?m=free&o=r"><img src="https://firebasestorage.googleapis.com/v0/b/projectwebsites-63cf7.appspot.com/o/font_awesome_logo-2717176489.png?alt=media&token=6521fdc7-9c38-40be-b4ce-f0e7e8315b55">FontAwesome</a>
+            <span style="background-color: #c3dcf5;">Font Awesome is a library of vector icons that can be used in web pages, documents, and other creative projects. It offers over 1,600 icons in a variety of styles, including solid, regular, brands, and more.</span>
+          </div>
+          <div data-cursor-text="Open" class="square" style="background-color: #ddd9fa;"><a target="_blank" href="https://clipchamp.com/en/"><img src="https://firebasestorage.googleapis.com/v0/b/projectwebsites-63cf7.appspot.com/o/microsoft-clipchamp-logo-51D92AEEAF-seeklogo.png?alt=media&token=6e177602-e5e3-4d45-a992-f1550285999a">ClipChamp</a>
+            <span style="background-color: #ddd9fa;">Clipchamp is a free online video editor that allows you to create and edit videos without any prior experience. It offers a wide range of features, including trimming, cropping, adding text and effects, and exporting in high definition</span>
+          </div>
+          <div data-cursor-text="Open" class="square" style="background-color: #f8c3ce;"><a target="_blank" href="https://yt5s.com/en172"><img src="https://firebasestorage.googleapis.com/v0/b/projectwebsites-63cf7.appspot.com/o/YT-Downloader-ikon-476669731.png?alt=media&token=a9ef555d-3c70-46cc-a9f9-0fe49df1f3cc">YT Downloader</a>
+            <span style="background-color: #f8c3ce;">A website that allows you to download free videos from youtube in HD</span>
+          </div>
+        </div>
+        <div class="content4 content">
+          <div data-cursor-text="Open" class="square" style="background-color: #f2c6c4;"><a target="_blank" href="https://www.ilovepdf.com/"><img src="https://firebasestorage.googleapis.com/v0/b/projectwebsites-63cf7.appspot.com/o/02_behance_ilovepdf-big-3801408716.png?alt=media&token=98c8b628-01b2-48d7-9dc3-50ba21412edc">PDF tools</a>
+            <span style="background-color: #f2c6c4;">iLovePDF is a free web app that offers a wide range of PDF editing, converting, and creating features.</span>
+          </div>
+          <div data-cursor-text="Open" class="square" style="background-color: #fbc1c6;"><a target="_blank" href="https://www.sodapdf.com/ocr-pdf/"><img src="https://firebasestorage.googleapis.com/v0/b/projectwebsites-63cf7.appspot.com/o/soda-pdf-1559230654-logo-1777744211.png?alt=media&token=05fae6e1-c644-44e5-a1a7-1f9caad39042">pdf OCR</a>
+            <span style="background-color: #fbc1c6;">is a PDF software that allows you to create, edit, and convert PDF files. It offers a free plan that allows you to perform basic tasks, and paid plans that offer more features.</span>
+          </div>
+          <div data-cursor-text="Open" class="square" style="background-color: #b6d3f4;"><a target="_blank" href="https://www.transfernow.net/en"><img src="https://firebasestorage.googleapis.com/v0/b/projectwebsites-63cf7.appspot.com/o/transfernow.png?alt=media&token=159026c6-5e2f-4ebe-8092-e1c60e3189a3">Send Any Files</a>
+            <span style="background-color: #b6d3f4;">is a file transfer service that allows you to send large files quickly and easily. It offers a free plan that allows you to transfer up to 2GB of files, and paid plans that allow you to transfer more files and larger files</span>
+          </div>
+          <div data-cursor-text="Open" class="square" style="background-color: #f5c2bc;"><a target="_blank" href="https://www.wolframalpha.com/"><img src="https://firebasestorage.googleapis.com/v0/b/projectwebsites-63cf7.appspot.com/o/623b006d27d4946aceae2fd9-3683626571.png?alt=media&token=77866996-54db-4bb2-ba0b-0f0703a3c242">Wolframalpha</a>
+            <span style="background-color: #f5c2bc;">is a computational knowledge engine that can answer your questions in a comprehensive and informative way.</span>
+          </div>
+          <div data-cursor-text="Open" class="square" style="background-color: #bbe0dd;"><a target="_blank" href=""><img src=""></a>
+            <span style="background-color: #bbe0dd;"></span>
+          </div>
+        </div>
+        <div class="SeeMore">
+            <div class="OuterMagneticRange">
+              <a href="AllWebsites.html">
+                <div class="newbutton magnetic" data-strength="20" data-strength-text="20">
+                  <div class="hovercolor"></div>
+                  <div class="textblock">See More</div>
+                </div>
+              </a>
+              </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Serve per lo switch button -->
+<svg width="0" height="0">
+  <defs>
+      <filter id="goo" x="-50%" width="200%" y="-50%" height="200%" color-interpolation-filters="sRGB">
+          <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="blur" />
+          <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 21 -7" result="cm" />
+      </filter>
+      <filter id="goo-light" x="-50%" width="200%" y="-50%" height="200%" color-interpolation-filters="sRGB">
+          <feGaussianBlur in="SourceGraphic" stdDeviation="1.25" result="blur" />
+          <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 21 -7" result="cm" />
+      </filter>
+      <filter id="goo-big" x="-50%" width="200%" y="-50%" height="200%" color-interpolation-filters="sRGB">
+          <feGaussianBlur in="SourceGraphic" stdDeviation="7" result="blur" />
+          <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 21 -7" result="cm" />
+      </filter>
+  </defs>
+</svg>
+
+    
+</body>
+</html>
+
+
+
+

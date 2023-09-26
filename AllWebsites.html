@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AllWebsites</title>
+    <link rel="stylesheet" href="AllWebsites.css">
+    <script src="AllWebsites.js"></script>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,100;9..40,200;9..40,300;9..40,400;9..40,500;9..40,600;9..40,700;9..40,800;9..40,900;9..40,1000&display=swap">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+
+    <!-- cursore -->
+    <script src="https://unpkg.com/mouse-follower@1/dist/mouse-follower.min.js"></script>   
+    <link rel="stylesheet" href="https://unpkg.com/mouse-follower@1/dist/mouse-follower.min.css">
+      
+</head>
+<body>
+
+    <header>
+        <div data-cursor="-blue" class="OuterMagneticRangeLink OuterMagneticRange">
+          <a href="MoscaFolio.html">
+            <div class="newbuttonLink magnetic" data-strength="70">
+              <div class="textblock">Mosca</div>
+            </div>
+          </a>
+          </div>
+          
+
+        <div class="MenuContainer" >
+            <span>Dark Mode</span>
+            <div class="switchWraper" data-cursor="-blue">
+                  <label class="switch">
+                      <input type="checkbox" class="checkbox"/>
+                      <svg viewBox="0 0 38 24" filter="url(#goo)">
+                          <circle class="default" cx="12" cy="12" r="8" />
+                          <circle class="dot" cx="26" cy="12" r="8" />
+                          <circle class="drop" cx="25" cy="-1" r="2" />
+                      </svg>
+                  </label>
+              </div>
+           <span >
+            Menu
+           </span>
+            
+            <svg  data-cursor-stick data-cursor="-interest"  class="ham hamRotate ham8" viewBox="0 0 100 100" width="40" height="40" onclick="this.classList.toggle('active')">
+                <path
+                      class="line top"
+                      d="m 30,33 h 40 c 3.722839,0 7.5,3.126468 7.5,8.578427 0,5.451959 -2.727029,8.421573 -7.5,8.421573 h -20" />
+                <path
+                      class="line middle"
+                      d="m 30,50 h 40" />
+                <path
+                      class="line bottom"
+                      d="m 70,67 h -40 c 0,0 -7.5,-0.802118 -7.5,-8.365747 0,-7.563629 7.5,-8.634253 7.5,-8.634253 h 20" />
+              </svg>
+        </div>
+
+
+    </header>
+
+    <div class="WebsiteContainer">
+        <div class="changeButtons"> 
+            <div class="OuterMagneticRange">
+                <div class="newbutton magnetic" style="background-color: #2f66ed;" data-strength="10" data-strength-text="10" onclick="showOnly('.content1', 0)">
+                  <div class="hovercolor"></div>
+                  <div class="textblock">Coding Tools</div>
+                </div>
+              </div>
+
+              <div class="OuterMagneticRange">
+                <div class="newbutton magnetic" data-strength="10" data-strength-text="10" onclick="showOnly('.content2',1)">
+                  <div class="hovercolor"></div>
+                  <div class="textblock">File Tools</div>
+                </div>
+              </div>
+
+              <div class="OuterMagneticRange">
+                <div class="newbutton magnetic" data-strength="10" data-strength-text="10" onclick="showOnly('.content3',2)">
+                  <div class="hovercolor"></div>
+                  <div class="textblock">Foto Tools</div>
+                </div>
+              </div>
+
+              <div class="OuterMagneticRange">
+                <div class="newbutton magnetic" data-strength="10" data-strength-text="10" onclick="showOnly('.content4',3)">
+                  <div class="hovercolor"></div>
+                  <div class="textblock">Text Tools</div>
+                </div>
+              </div>
+
+              <div class="OuterMagneticRange">
+                <div class="newbutton magnetic" data-strength="10" data-strength-text="10" onclick="showOnly('.content5',4)">
+                  <div class="hovercolor"></div>
+                  <div class="textblock">Audio Tools</div>
+                </div>
+              </div>
+
+              <div class="OuterMagneticRange">
+                <div class="newbutton magnetic" data-strength="10" data-strength-text="10" onclick="showOnly('.content6',5)">
+                  <div class="hovercolor"></div>
+                  <div class="textblock">Media Resources</div>
+                </div>
+              </div>
+
+              <div class="OuterMagneticRange">
+                <div class="newbutton magnetic" data-strength="10" data-strength-text="10" onclick="showOnly('.content7',6)">
+                  <div class="hovercolor"></div>
+                  <div class="textblock">Other Tools</div>
+                </div>
+              </div>
+        </div>
+
+        <div class="content1 content" style="display: grid;">
+
+          <div data-cursor-text="Open" class="square" style="background-color: #dadbfc;"><a target="_blank" href="https://10015.io/tools/html-minifier"><img src="https://firebasestorage.googleapis.com/v0/b/projectwebsites-63cf7.appspot.com/o/html-minifier.svg?alt=media&token=f6cd4631-70f3-41fc-9f4e-81e81732b40c">HTML Minifier</a>
+            <span style="background-color: #dadbfc;">This tool allows users to minify HTML code, which can help to improve website performance by reducing the size of the HTML file. It does this by removing unnecessary characters, such as whitespace, comments, and line breaks</span>
+          </div>
+          <div data-cursor-text="Open" class="square" style="background-color: #dadbfc;"><a target="_blank" href="https://10015.io/tools/css-minifier"><img src="https://firebasestorage.googleapis.com/v0/b/projectwebsites-63cf7.appspot.com/o/css-minifier.svg?alt=media&token=844c38b6-dc12-47d2-bc02-04270b2baa4c">CSS Minifier</a>
+            <span style="background-color: #dadbfc;">This tool allows users to minify CSS code, which can also help to improve website performance. It does this by removing unnecessary characters, such as whitespace, comments, and line breaks.</span>
+          </div>
+          <div data-cursor-text="Open" class="square" style="background-color: #dadbfc;"><a target="_blank" href="https://10015.io/tools/javascript-minifier"><img src="https://firebasestorage.googleapis.com/v0/b/projectwebsites-63cf7.appspot.com/o/javascript-minifier.svg?alt=media&token=d4358a4e-eedd-4c9c-8a55-187b17ad940f">JS Minifier</a>
+            <span style="background-color: #dadbfc;">This tool allows users to minify JavaScript code, which can help to improve website performance. It does this by removing unnecessary characters, such as whitespace, comments, and line breaks. </span>
+          </div>
+
+          <div data-cursor-text="Open" class="square" style="background-color: #dadbfc;"><a target="_blank" href="https://10015.io/tools/html-formatter"><img src="https://firebasestorage.googleapis.com/v0/b/projectwebsites-63cf7.appspot.com/o/html-formatter.svg?alt=media&token=f5a8c011-67a9-42fd-9935-e1fade4bcc36">Html Formatter</a> 
+            <span style="background-color: #dadbfc;">Free online HTML formatter to improve the readability and maintainability of your HTML code.</span>
+          </div>
+          <div data-cursor-text="Open" class="square" style="background-color: #dadbfc;"><a target="_blank" href="https://10015.io/tools/css-formatter"><img src="https://firebasestorage.googleapis.com/v0/b/projectwebsites-63cf7.appspot.com/o/css-formatter.svg?alt=media&token=761b054c-3f01-4f6f-9412-ff6458ac7775">CSS Formatter</a> 
+            <span style="background-color: #dadbfc;">Free online CSS formatter to format and beautify your CSS code.</span>
+          </div>
+          <div data-cursor-text="Open" class="square" style="background-color: #dadbfc;"><a target="_blank" href="https://10015.io/tools/javascript-formatter"><img src="https://firebasestorage.googleapis.com/v0/b/projectwebsites-63cf7.appspot.com/o/javascript-formatter.svg?alt=media&token=37e7a235-7a89-4332-9fa1-1bd7f6e9a3b3">JS Formatter</a> 
+            <span style="background-color: #dadbfc;">is a free online tool that formats and beautifies JavaScript code. It is a useful tool for developers who want to improve the readability and maintainability of their JavaScript code.</span>
+          </div>
+          <div data-cursor-text="Open" class="square" style="background-color: #d8e7fd;"><a target="_blank" href="https://www.cssportal.com/less-to-css/"><img src="https://firebasestorage.googleapis.com/v0/b/projectwebsites-63cf7.appspot.com/o/cssicon.png?alt=media&token=569467fa-79df-40d3-9125-e016f009e152">CSS/HTML converter</a>
+            <span style="background-color: #d8e7fd;">Converts CSS from one format to another, such as from SCSS to CSS or from CSS to SASS. It is a free and easy-to-use tool that can help you save time and effort when working with CSS.</span>
+          </div>
+
+          <div data-cursor-text="Open" class="square" style="background-color: #bbe0dd;"><a target="_blank" href="https://csshero.org/mesher/"><img src="">CSS Gradient</a> 
+            <span style="background-color: #bbe0dd;">Test</span>
+          </div>
+          <div data-cursor-text="Open" class="square" style="background-color: #bbe0dd;"><a target="_blank" href="https://grid.layoutit.com/"><img src="">CSS grid</a> 
+            <span style="background-color: #bbe0dd;">Test</span>
+          </div>
+          <div data-cursor-text="Open" class="square" style="background-color: #bbe0dd;"><a target="_blank" href="https://www.opengraph.xyz/"><img src="">Metatag Generator</a> 
+            <span style="background-color: #bbe0dd;">Test</span>
+          </div>
+
+
+
+
+          <!-- ------------------------- Tienile per ultime -------------------------- -->
+          <div data-cursor-text="Open" class="square" style="background-color: #bbe0dd;"><a target="_blank" href=""><img src="">Lib: gsap</a> 
+            <span style="background-color: #bbe0dd;">Test</span>
+          </div>
+          <div data-cursor-text="Open" class="square" style="background-color: #bbe0dd;"><a target="_blank" href=""><img src="">Lib: ScrollTrigger</a> 
+            <span style="background-color: #bbe0dd;">Test</span>
+          </div>
+          <div data-cursor-text="Open" class="square" style="background-color: #bbe0dd;"><a target="_blank" href=""><img src="">Lib: Barba</a> 
+            <span style="background-color: #bbe0dd;">Test</span>
+          </div>
+          <div data-cursor-text="Open" class="square" style="background-color: #bbe0dd;"><a target="_blank" href=""><img src="">Lib: Parallax</a> 
+            <span style="background-color: #bbe0dd;">Test</span>
+          </div>
+        </div>
+
+        <div class="content2 content">
+          <div data-cursor-text="Open" class="square" style="background-color: #bbe0dd;"><a target="_blank" href="https://www.opengraph.xyz/"><img src="">Metatag Generator</a> 
+            <span style="background-color: #bbe0dd;">Test</span>
+          </div>
+          <div data-cursor-text="Open" class="square" style="background-color: #bbe0dd;"><a target="_blank" href="https://www.opengraph.xyz/"><img src="">Metatag Generator</a> 
+            <span style="background-color: #bbe0dd;">Test</span>
+          </div>
+          <div data-cursor-text="Open" class="square" style="background-color: #bbe0dd;"><a target="_blank" href="https://www.opengraph.xyz/"><img src="">Metatag Generator</a> 
+            <span style="background-color: #bbe0dd;">Test</span>
+          </div>
+                    <div data-cursor-text="Open" class="square" style="background-color: #bbe0dd;"><a target="_blank" href="https://www.opengraph.xyz/"><img src="">Metatag Generator</a> 
+            <span style="background-color: #bbe0dd;">Test</span>
+          </div>
+          <div data-cursor-text="Open" class="square" style="background-color: #bbe0dd;"><a target="_blank" href="https://www.opengraph.xyz/"><img src="">Metatag Generator</a> 
+            <span style="background-color: #bbe0dd;">Test</span>
+          </div>
+          <div data-cursor-text="Open" class="square" style="background-color: #bbe0dd;"><a target="_blank" href="https://www.opengraph.xyz/"><img src="">Metatag Generator</a> 
+            <span style="background-color: #bbe0dd;">Test</span>
+          </div>
+          <div data-cursor-text="Open" class="square" style="background-color: #bbe0dd;"><a target="_blank" href="https://www.opengraph.xyz/"><img src="">Metatag Generator</a> 
+            <span style="background-color: #bbe0dd;">Test</span>
+          </div>
+          <div data-cursor-text="Open" class="square" style="background-color: #bbe0dd;"><a target="_blank" href="https://www.opengraph.xyz/"><img src="">Metatag Generator</a> 
+            <span style="background-color: #bbe0dd;">Test</span>
+          </div>
+          <div data-cursor-text="Open" class="square" style="background-color: #bbe0dd;"><a target="_blank" href="https://www.opengraph.xyz/"><img src="">Metatag Generator</a> 
+            <span style="background-color: #bbe0dd;">Test</span>
+          </div>
+          <div data-cursor-text="Open" class="square" style="background-color: #bbe0dd;"><a target="_blank" href="https://www.opengraph.xyz/"><img src="">Metatag Generator</a> 
+            <span style="background-color: #bbe0dd;">Test</span>
+          </div>
+          <div data-cursor-text="Open" class="square" style="background-color: #bbe0dd;"><a target="_blank" href="https://www.opengraph.xyz/"><img src="">Metatag Generator</a> 
+            <span style="background-color: #bbe0dd;">Test</span>
+          </div>
+          <div data-cursor-text="Open" class="square" style="background-color: #bbe0dd;"><a target="_blank" href="https://www.opengraph.xyz/"><img src="">Metatag Generator</a> 
+            <span style="background-color: #bbe0dd;">Test</span>
+          </div>
+          <div data-cursor-text="Open" class="square" style="background-color: #bbe0dd;"><a target="_blank" href="https://www.opengraph.xyz/"><img src="">Metatag Generator</a> 
+            <span style="background-color: #bbe0dd;">Test</span>
+          </div>
+        </div>
+
+        <div class="content3 content">
+        </div>
+
+        <div class="content4 content">
+        </div>
+
+        <div class="content5 content">
+        </div>
+
+        <div class="content6 content">
+        </div>
+
+        <div class="content7 content">
+        </div>
+
+
+
+        <div class="SeeMore">
+            <div class="OuterMagneticRange">
+              <a href="Websites.html">
+                <div class="newbutton magnetic" data-strength="20" data-strength-text="20">
+                  <div class="hovercolor"></div>
+                  <div class="textblock">← Back</div>
+                </div>
+              </a>
+              </div>
+        </div>
+
+
+    </div>
+
+
+
+    <!-- Serve per lo switch button -->
+<svg width="0" height="0">
+    <defs>
+        <filter id="goo" x="-50%" width="200%" y="-50%" height="200%" color-interpolation-filters="sRGB">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="blur" />
+            <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 21 -7" result="cm" />
+        </filter>
+        <filter id="goo-light" x="-50%" width="200%" y="-50%" height="200%" color-interpolation-filters="sRGB">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="1.25" result="blur" />
+            <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 21 -7" result="cm" />
+        </filter>
+        <filter id="goo-big" x="-50%" width="200%" y="-50%" height="200%" color-interpolation-filters="sRGB">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="7" result="blur" />
+            <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 21 -7" result="cm" />
+        </filter>
+    </defs>
+  </svg>
+  
+</body>
+</html>
