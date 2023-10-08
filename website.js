@@ -187,7 +187,6 @@ function InitCheckbox(){
 }
 
 function Initheader(){
-
   gsap.to('header', {
     opacity:1,
     duration: 0.5,
@@ -256,6 +255,17 @@ function InitSites(){
     } )
   }
 
+
+  function fireScript(){
+    Initheader() 
+    initTextAnim()
+    InitSites()
+    InitSwithcToDark()
+    InitCheckbox()
+    initMagneticButtons()
+    initCursor()
+  }
+
   function BarbaInit(){
 
 
@@ -273,7 +283,8 @@ function InitSites(){
         width:"100%",
         left:"100%",
         ease:"Expo.easeInOut",
-        delay:0.3
+        delay:0.3,
+
       })
     
       tl.set(".loading-screen", {left:"-100%"})
@@ -288,14 +299,15 @@ function InitSites(){
           async leave(data){
             const done = this.async();
             BarbaPageTransition();
-            setTimeout(function() {
-
-  
+            setTimeout(function() {  
+              cursor.destroy();
               done(); 
             }, 1000);
           },
   
           async enter(data){
+            //window.scrollTo(0, 0);
+            fireScript()
           },
   
           async once(data){
@@ -314,13 +326,11 @@ function InitSites(){
 
 document.addEventListener("DOMContentLoaded", function () {
     BarbaInit()
+    Initheader() 
     initTextAnim()
     InitSites()
     InitSwithcToDark()
     InitCheckbox()
     initMagneticButtons()
-    Initheader() 
-    initCursor()
-    
-      
+    initCursor()  
 })

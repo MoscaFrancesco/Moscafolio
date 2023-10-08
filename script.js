@@ -1,12 +1,12 @@
 
-
+let OuterMagneticRange
 function initMagneticButtons() {
   //select all the elements with class magnetic
   const magnets = document.querySelectorAll(".magnetic");
 
   //for each add the two event listener to the closest parent with class OuterMagneticRange
   magnets.forEach((magnet) => {
-    const OuterMagneticRange = magnet.closest(".OuterMagneticRange");
+    OuterMagneticRange = magnet.closest(".OuterMagneticRange");
     OuterMagneticRange.addEventListener("mousemove", moveMagnet);
     OuterMagneticRange.addEventListener("mouseleave", resetMagnet);
   });
@@ -72,7 +72,6 @@ e.addEventListener('mouseleave', () => {
 function initTextAnim(){
   gsap.set('.about_text_p', {autoAlpha: 0, yPercent: 200});
   ScrollTrigger.batch(".about_text", {
-  
     onEnter: batch => {
       batch.forEach((section) => {
         gsap.to(section.querySelectorAll(".about_text_p"), {
@@ -130,6 +129,8 @@ function InitParallax(){
 
 });
 }
+
+let mouseMove 
 
 function InitBlob(){
   let canvas, ctx;
@@ -363,7 +364,7 @@ function InitBlob(){
     let oldMousePoint = { x: 0, y: 0};
     let hover = false;
     
-    let mouseMove = function(e) {
+    mouseMove = function(e) {
       
       /* NON SO se va bene */
         hover ? cursor.hide() : cursor.show();
@@ -670,6 +671,26 @@ function Initheader(){
   });
 }
 
+
+function fireScript(){
+  initCursor()
+  InitLenis()
+  InitParallax()
+  InitBlob()
+  initMagneticButtons()
+  Initheader()    
+  InitFoto()
+ 
+  InitCheckbox()
+
+  initTextAnim()
+  InitDivisoreAnim()
+  InitCardAnim()
+  InitAnimButtonWorks()
+  InitAnimArrow()
+  //InitScrollingPhrase()
+}
+
 function BarbaInit(){
 
   function BarbaPageTransition(){
@@ -686,7 +707,10 @@ function BarbaInit(){
       width:"100%",
       left:"100%",
       ease:"Expo.easeInOut",
-      delay:0.3
+      delay:0.3,
+      onComplete: () =>{
+        ScrollTrigger.refresh(true)
+     }
     })
   
     tl.set(".loading-screen", {left:"-100%"})
@@ -697,31 +721,30 @@ function BarbaInit(){
     sync:true,
     transitions:[
       {
+
         async leave(data){
           const done =this.async();
           BarbaPageTransition();
           setTimeout(function() {
-            ScrollTrigger.refresh()
+            window.removeEventListener('pointermove', mouseMove);
+            ScrollTrigger.getAll().forEach(t => t.kill());
+            cursor.destroy();
             done();
           }, 1000);        
         },
 
         async enter(data){
+          window.scrollTo(0, 0);
+          fireScript()
+          setTimeout(function() {
+            ScrollTrigger.refresh(true)
+          }, 1000); 
         },
 
-        async once(data){
+        async once(data){     
+           
         },
-
-
         async afterEnter(data){
-          initCursor()
-          InitLenis()
-          InitParallax()
-          InitBlob()
-          initMagneticButtons()
-          Initheader()    
-          InitFoto()
-          initTextAnim()
         }
 
       }
@@ -759,23 +782,7 @@ document.addEventListener("DOMContentLoaded", function () {
       body.style.setProperty("--Secondary-Color", primaryColor);
     }
       BarbaInit()
-      initCursor()
-      InitLenis()
-      InitParallax()
-      InitBlob()
-      initMagneticButtons()
-      Initheader()  
-      InitFoto()
-  
-      InitCheckbox()
-
-      initTextAnim()
-      InitDivisoreAnim()
-      InitCardAnim()
-      InitScrollingPhrase()
-      InitAnimButtonWorks()
-      InitAnimArrow()
-
+      fireScript()
   });
 
 
