@@ -549,6 +549,7 @@ function InitAnimArrow(){
         start: 'top 95%',
         end: 'bottom 50%',
         scrub: true,
+        markers:true
       },
     }).to(element, {
       y: 0,
@@ -669,8 +670,71 @@ function Initheader(){
   });
 }
 
+function BarbaInit(){
+
+  function BarbaPageTransition(){
+    var tl = gsap.timeline();
+    tl.to(".loading-screen" ,{
+      duration:1.2,
+      width:"100%",
+      left:"0%",
+      ease:"Expo.easeInOut"
+    })
+  
+    tl.to(".loading-screen" ,{
+      duration:1,
+      width:"100%",
+      left:"100%",
+      ease:"Expo.easeInOut",
+      delay:0.3
+    })
+  
+    tl.set(".loading-screen", {left:"-100%"})
+  
+  }
+
+  barba.init({
+    sync:true,
+    transitions:[
+      {
+        async leave(data){
+          const done =this.async();
+          BarbaPageTransition();
+          setTimeout(function() {
+            ScrollTrigger.refresh()
+            done();
+          }, 1000);        
+        },
+
+        async enter(data){
+        },
+
+        async once(data){
+        },
+
+
+        async afterEnter(data){
+          initCursor()
+          InitLenis()
+          InitParallax()
+          InitBlob()
+          initMagneticButtons()
+          Initheader()    
+          InitFoto()
+          initTextAnim()
+        }
+
+      }
+    ]
+
+  })
+
+
+}
 
 document.addEventListener("DOMContentLoaded", function () {
+
+    
     window.scrollTo(0, 0);
     $('.checkbox').prop('checked', false);
 
@@ -682,9 +746,11 @@ document.addEventListener("DOMContentLoaded", function () {
     var body = document.querySelector("body");
     const checkbox = document.querySelector('.switch');
 
+
   
     if (source === "Dark") {
       $('.checkbox').prop('checked', true);
+  
 
       var primaryColor = getComputedStyle(body).getPropertyValue("--Primary-Color");
       var secondaryColor = getComputedStyle(body).getPropertyValue("--Secondary-Color");
@@ -692,22 +758,24 @@ document.addEventListener("DOMContentLoaded", function () {
       body.style.setProperty("--Primary-Color", secondaryColor);
       body.style.setProperty("--Secondary-Color", primaryColor);
     }
-
+      BarbaInit()
       initCursor()
-      initTextAnim()
-      InitFoto()
       InitLenis()
       InitParallax()
       InitBlob()
+      initMagneticButtons()
+      Initheader()  
+      InitFoto()
+  
+      InitCheckbox()
+
+      initTextAnim()
       InitDivisoreAnim()
       InitCardAnim()
       InitScrollingPhrase()
       InitAnimButtonWorks()
       InitAnimArrow()
-      InitCheckbox()
-      initMagneticButtons()
-      Initheader()    
-    
+
   });
 
 

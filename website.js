@@ -256,13 +256,71 @@ function InitSites(){
     } )
   }
 
+  function BarbaInit(){
+
+
+    function BarbaPageTransition(){
+      var tl = gsap.timeline();
+      tl.to(".loading-screen" ,{
+        duration:1.2,
+        width:"100%",
+        left:"0%",
+        ease:"Expo.easeInOut"
+      })
+    
+      tl.to(".loading-screen" ,{
+        duration:1,
+        width:"100%",
+        left:"100%",
+        ease:"Expo.easeInOut",
+        delay:0.3
+      })
+    
+      tl.set(".loading-screen", {left:"-100%"})
+    
+    }
+  
+    barba.init({
+      sync:true,
+      transitions:[
+        {
+
+          async leave(data){
+            const done = this.async();
+            BarbaPageTransition();
+            setTimeout(function() {
+
+  
+              done(); 
+            }, 1000);
+          },
+  
+          async enter(data){
+          },
+  
+          async once(data){
+
+          },
+
+          async afterEnter(data){
+
+          }
+        }
+      ]
+  
+    })
+  }
+  
+
 document.addEventListener("DOMContentLoaded", function () {
+    BarbaInit()
     initTextAnim()
+    InitSites()
     InitSwithcToDark()
     InitCheckbox()
     initMagneticButtons()
     Initheader() 
     initCursor()
-    InitSites()
+    
       
 })
