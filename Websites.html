@@ -4,8 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="website.css">
+    <link rel="stylesheet" href="barbaLoader.css">
     <script src="website.js"></script>
+
+
+
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,100;9..40,200;9..40,300;9..40,400;9..40,500;9..40,600;9..40,700;9..40,800;9..40,900;9..40,1000&display=swap">
 
@@ -21,11 +24,24 @@
       
 </head>
 
-<body>
+<body data-barba="wrapper">
+  
 
+
+  <div class="load-container">
+      <div class="loading-screen"></div>
+  </div>
+
+  <main data-barba="container" data-barba-namespace="websites">
+
+    <style>
+      @import url('website.css');
+    </style>
+
+          
     <header >
         <div data-cursor="-blue" class="OuterMagneticRangeLink OuterMagneticRange">
-          <a href="MoscaFolio.html">
+          <a href="index.html">
             <div class="newbuttonLink magnetic" data-strength="70">
               <div class="textblock">Mosca</div>
             </div>
@@ -160,8 +176,8 @@
           <div data-cursor-text="Open" class="square" style="background-color: #c5e3e0;"><a target="_blank" href="https://www.photopea.com/"><img src="https://firebasestorage.googleapis.com/v0/b/projectwebsites-63cf7.appspot.com/o/photopea-logo-3121691088.png?alt=media&token=4cb16b1a-484b-4cf6-bac2-315167d8a4b5">Photopea</a>
             <span style="background-color: #c5e3e0;">Photopea is a free and online Photoshop alternative that allows you to edit photos, create graphics, and design websites.</span>
           </div>
-          <div data-cursor-text="Open" class="square" style="background-color: #a4edf3;"><a target="_blank" href="https://imagecompressor.com/"><img src="https://firebasestorage.googleapis.com/v0/b/projectwebsites-63cf7.appspot.com/o/ImageCompressor.png?alt=media&token=d72c2a3b-ff3d-4468-a971-59492252362c">Image Compressor</a>
-            <span style="background-color: #a4edf3;">ImageCompressor is a free online image compressor that uses a smart combination of the best optimization and lossy compression algorithms to shrink JPEG, GIF, and PNG images to the minimum possible size while keeping the required level of quality.</span>
+          <div data-cursor-text="Open" class="square" style="background-color: #eeeffe ;"><a target="_blank" href="https://picwish.com/compress-image"><img src="https://firebasestorage.googleapis.com/v0/b/projectwebsites-63cf7.appspot.com/o/picwish.png?alt=media&token=f83888d0-e5b4-45eb-ac22-ccd67413d871">Image Compressor</a> 
+            <span style="background-color: #eeeffe ;">https://picwish.com/compress-image</span>
           </div>
           <div data-cursor-text="Open" class="square" style="background-color: #c3dcf5;"><a target="_blank" href="https://fontawesome.com/search?m=free&o=r"><img src="https://firebasestorage.googleapis.com/v0/b/projectwebsites-63cf7.appspot.com/o/font_awesome_logo-2717176489.png?alt=media&token=6521fdc7-9c38-40be-b4ce-f0e7e8315b55">FontAwesome</a>
             <span style="background-color: #c3dcf5;">Font Awesome is a library of vector icons that can be used in web pages, documents, and other creative projects. It offers over 1,600 icons in a variety of styles, including solid, regular, brands, and more.</span>
@@ -203,26 +219,28 @@
       </div>
     </main>
 
-    <!-- Serve per lo switch button -->
-<svg width="0" height="0">
-  <defs>
-      <filter id="goo" x="-50%" width="200%" y="-50%" height="200%" color-interpolation-filters="sRGB">
-          <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="blur" />
-          <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 21 -7" result="cm" />
-      </filter>
-      <filter id="goo-light" x="-50%" width="200%" y="-50%" height="200%" color-interpolation-filters="sRGB">
-          <feGaussianBlur in="SourceGraphic" stdDeviation="1.25" result="blur" />
-          <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 21 -7" result="cm" />
-      </filter>
-      <filter id="goo-big" x="-50%" width="200%" y="-50%" height="200%" color-interpolation-filters="sRGB">
-          <feGaussianBlur in="SourceGraphic" stdDeviation="7" result="blur" />
-          <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 21 -7" result="cm" />
-      </filter>
-  </defs>
-</svg>
+    <svg width="0" height="0">
+      <defs>
+          <filter id="goo" x="-50%" width="200%" y="-50%" height="200%" color-interpolation-filters="sRGB">
+              <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="blur" />
+              <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 21 -7" result="cm" />
+          </filter>
+          <filter id="goo-light" x="-50%" width="200%" y="-50%" height="200%" color-interpolation-filters="sRGB">
+              <feGaussianBlur in="SourceGraphic" stdDeviation="1.25" result="blur" />
+              <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 21 -7" result="cm" />
+          </filter>
+          <filter id="goo-big" x="-50%" width="200%" y="-50%" height="200%" color-interpolation-filters="sRGB">
+              <feGaussianBlur in="SourceGraphic" stdDeviation="7" result="blur" />
+              <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 21 -7" result="cm" />
+          </filter>
+      </defs>
+    </svg>
 
     
+  </main>
 </body>
+<script src="https://unpkg.com/@barba/core"></script>
+
 </html>
 
 
