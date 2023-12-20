@@ -191,52 +191,7 @@ function Initheader(){
   });
 }
 
-function showOnly(className,buddonIndex) {
 
-    if ( document.querySelector(className) != document.querySelector(".content[style*='flex']") ) {
-    gsap.to( document.querySelectorAll(".content[style*='flex'] .square"), {
-        opacity: 0,
-        duration: 0.3,
-        ease: "power1.inOut", 
-        stagger: {
-            from: "end",
-            amount: 0.1
-        },
-    });
-
-
-    setTimeout( ()=>{
-
-    var content = document.querySelectorAll(".WebsiteContainer .content");
-    var buttons = document.querySelectorAll(".changeButtons .magnetic")
-
-    for (var i = 0; i < content.length; i++) {
-    content[i].style.display = "none";
-    buttons[i].style.backgroundColor = "black";
-
-
-    var squares = content[i].querySelectorAll(".square");
-    for (var j = 0; j < squares.length; j++) {
-        squares[j].style.opacity = 0;
-    }
-    
-    }
-    $(className).css({display:"flex"})
-    buttons[buddonIndex].style.backgroundColor = "#2f66ed";
-
-    gsap.to(document.querySelectorAll( className + " .square"), {
-        opacity: 1,
-        duration: 0.3,
-        ease: "power1.inOut", 
-        stagger: {
-            from: "start",
-            amount: 0.1
-        },
-
-    });
-}, 400)
-}
-}
 
 function InitSites(){
     gsap.fromTo(document.querySelector(".WebsiteContainer"),{
@@ -254,9 +209,56 @@ function InitSites(){
 
 
   function fireScript(){
+    function showOnly(className,buddonIndex) {
+
+      if ( document.querySelector(className) != document.querySelector(".content[style*='flex']") ) {
+      gsap.to( document.querySelectorAll(".content[style*='flex'] .square"), {
+          opacity: 0,
+          duration: 0.3,
+          ease: "power1.inOut", 
+          stagger: {
+              from: "end",
+              amount: 0.1
+          },
+      });
+  
+  
+      setTimeout( ()=>{
+  
+      var content = document.querySelectorAll(".WebsiteContainer .content");
+      var buttons = document.querySelectorAll(".changeButtons .magnetic")
+  
+      for (var i = 0; i < content.length; i++) {
+      content[i].style.display = "none";
+      buttons[i].style.backgroundColor = "black";
+  
+  
+      var squares = content[i].querySelectorAll(".square");
+      for (var j = 0; j < squares.length; j++) {
+          squares[j].style.opacity = 0;
+      }
+      
+      }
+      $(className).css({display:"flex"})
+      buttons[buddonIndex].style.backgroundColor = "#2f66ed";
+  
+      gsap.to(document.querySelectorAll( className + " .square"), {
+          opacity: 1,
+          duration: 0.3,
+          ease: "power1.inOut", 
+          stagger: {
+              from: "start",
+              amount: 0.1
+          },
+  
+      });
+  }, 400)
+  }
+  }
+
     Initheader() 
-    initTextAnim()
     InitSites()
+    initTextAnim()
     InitSwithcToDark()
     InitCheckbox()
     initMagneticButtons()
@@ -301,9 +303,9 @@ function InitSites(){
               done(); 
             }, 1000);
           },
-  
-          async enter(data){
-            //window.scrollTo(0, 0);
+
+          async enter(data){     
+   
             fireScript()
           },
   
@@ -330,4 +332,5 @@ document.addEventListener("DOMContentLoaded", function () {
     InitCheckbox()
     initMagneticButtons()
     initCursor()  
+
 })

@@ -102,8 +102,12 @@ function InitFoto(){
   } )
 }
 
+
+
+
+let lenis
 function InitLenis(){
-  const lenis = new Lenis({
+  lenis = new Lenis({
     duration:0.8
   })
 
@@ -117,6 +121,7 @@ function InitLenis(){
   }
 
   requestAnimationFrame(raf)
+
 }
 
 function InitParallax(){
@@ -131,9 +136,9 @@ function InitParallax(){
 }
 
 let mouseMove 
-
+let canvas
 function InitBlob(){
-  let canvas, ctx;
+  let ctx;
   let render, init;
   let blob;
   let BlobColor = "#2f66ed"
@@ -371,7 +376,6 @@ function InitBlob(){
         hover ? canvas.style.cursor = "none" : canvas.style.cursor = "auto"
         let canvasContainer = document.querySelector('.canvas-container');
         let canvasContainerRect = canvasContainer.getBoundingClientRect();
-        
         let pos = blob.center;
         let containerCenterX = canvasContainerRect.width / 2;
         let containerCenterY = canvasContainerRect.height / 2;
@@ -424,8 +428,9 @@ function InitBlob(){
       oldMousePoint.x = mouseX;
       oldMousePoint.y = mouseY;
     }
+
     // window.addEventListener('mousemove', mouseMove);
-    window.addEventListener('pointermove', mouseMove);
+    canvas.addEventListener('pointermove', mouseMove);
     
     blob.canvas = canvas;
     blob.init();
@@ -550,8 +555,7 @@ function InitAnimArrow(){
         start: 'top 95%',
         end: 'bottom 50%',
         scrub: true,
-        markers:true
-      },
+        },
     }).to(element, {
       y: 0,
     })
@@ -679,11 +683,9 @@ function fireScript(){
   InitBlob()
   initMagneticButtons()
   Initheader()    
-  InitFoto()
  
   InitCheckbox()
 
-  initTextAnim()
   InitDivisoreAnim()
   InitCardAnim()
   InitAnimButtonWorks()
@@ -725,27 +727,38 @@ function BarbaInit(){
         async leave(data){
           const done =this.async();
           BarbaPageTransition();
+          canvas.removeEventListener('pointermove', mouseMove);
           setTimeout(function() {
-            window.removeEventListener('pointermove', mouseMove);
             ScrollTrigger.getAll().forEach(t => t.kill());
             cursor.destroy();
+            lenis.destroy();
+
             done();
           }, 1000);        
         },
+        async beforeEnter(data){
+          window.scrollTo(0, 0);
+
+        },
 
         async enter(data){
-          window.scrollTo(0, 0);
-          fireScript()
+
           setTimeout(function() {
-            ScrollTrigger.refresh(true)
-          }, 1000); 
+            initTextAnim()
+            InitFoto()
+
+          }, 500); 
+          fireScript()
+   
+        },
+        async afterEnter(data){
+          ScrollTrigger.refresh(true)
         },
 
         async once(data){     
            
-        },
-        async afterEnter(data){
         }
+
 
       }
     ]
@@ -782,7 +795,12 @@ document.addEventListener("DOMContentLoaded", function () {
       body.style.setProperty("--Secondary-Color", primaryColor);
     }
       BarbaInit()
+      initTextAnim()
+      InitFoto()
       fireScript()
+
+
+
   });
 
 
