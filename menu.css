@@ -1,0 +1,1141 @@
+
+/* ------------------------------ Menu Navbar ----------------------------- */
+/* Definisco la navbar, nelle tabs andranno le icone, definisco le animazioni quando sono checked e uso il glider per selezionare */
+
+body{
+  margin: 0;
+  --margin-size:20px;
+  --Text-Size:14px;
+  --Font-Family: "system-ui"; /*system-ui, Consolas,Segoe UI*/
+  --Font-Weight:600;
+  
+  --Accent-Color: #0870ed;
+  --Background-Color:  #202020;
+  --Widget-Color: #292929;
+  --Detail-Color: gray;
+  --Text-Color: #d2d2d2;
+  --Border-Radius:10px;
+  background-color: var(--Background-Color);
+
+}
+
+/* -------------------------------------------------------------------------- */
+/* --------------------------------- NavBar --------------------------------- */
+/* -------------------------------------------------------------------------- */
+#TitlteBar{
+  font-family: "Segoe UI";
+  font-weight: 500;
+  font-size: 12px;
+  color: var(--Text-Color);
+  display: flex;
+  align-items: center;
+  padding-left: 7px;
+  background-color: var(--Background-Color);
+  width: calc(100% - 7px);
+  height: 26px;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  z-index: 10000;
+  -webkit-app-region: drag;    /* Allow user to drag the window using this titlebar */
+  -webkit-user-select: none;   /* Prevent user from selecting things */
+  user-select: none;
+}
+
+.TitleButton{
+  -webkit-app-region: none; /*Perchè altrimenti se drag non va :hover*/
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height:100%; 
+  background-color: transparent; 
+  position: absolute; 
+  width:46px; 
+  border: none; 
+  border-radius: 0px;
+}
+
+#CloseBTN:hover{
+background-color: #c42b1c;
+}
+
+#MinBTN:hover{
+  background-color: #2d2d2d;
+  }
+
+#MaxBTN:hover{
+  background-color: #2d2d2d;
+  }
+
+/* -------------------------------------------------------------------------- */
+/* ------------------------------- Main Page -------------------------------- */
+/* -------------------------------------------------------------------------- */
+
+.animation{
+  top:40px;
+  position: absolute;
+  background-color: transparent;
+  height: 110px;
+  width:100%;
+  box-sizing: border-box;
+}
+
+.input{
+  z-index: 20;
+  top: 150px;
+  position: absolute ;
+  background-color: transparent; 
+  height: calc(100% - 150px);
+  width:100%;
+  box-sizing: border-box;
+  margin: 0;
+  
+}
+
+#Ai_border{
+  --Ai-height:60px;
+  --Ai-width:95px;
+  border-radius:  calc(var(--Ai-height)/2);
+  border-width: 7px; 
+  background-color: transparent;
+  width: var(--Ai-width);
+  height: var(--Ai-height);
+  position: absolute;
+  box-sizing: border-box;
+  margin: 0;
+  top: calc((84px - var(--Ai-height)) / 2);
+  left:50%;
+  translate:calc(-1*var(--Ai-height));
+}
+
+body{
+  --Input-Height: 42px;
+}
+
+#inputTextbox{
+  position: absolute;
+  bottom: var(--margin-size);
+  left: var(--margin-size);
+  right: var(--margin-size);
+  margin: 0;
+  height: var(--Input-Height);
+  background-color: var(--Widget-Color);
+  border: none;
+  outline: none;
+  border-radius: var(--Border-Radius);
+  font-size: var(--Text-Size);
+  font-family:var(--Font-Family);
+  color: var(--Text-Color);
+  padding:0px;    
+  padding-left: 10px;
+  padding-right: 10px;
+  z-index:1;
+}
+
+
+#outputTextbox {
+  position: absolute;
+  bottom: calc(40px + var(--Input-Height));
+  left: var(--margin-size);
+  right: var(--margin-size);
+  top: 26px;
+  margin: 0;
+  border: none;
+  resize: none;
+  outline: none;
+  font-size: var(--Text-Size);
+  font-family: var(--Font-Family);
+  color: var(--Text-Color);  
+  background-color: var(--Widget-Color);
+  border-radius: var(--Border-Radius);
+  padding: 10px;
+  box-sizing: border-box;
+  white-space: pre-wrap; /*formattazione del testo*/
+  overflow-x: hidden;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  word-wrap: break-word;    
+}
+
+
+#outputTextbox code {
+  font-size: var(--Text-Size);
+  font-family: "Consolas";
+  color: var(--Text-Color);
+  background-color: #0c0c0c;
+  max-width: 600px;
+  padding: 5px;
+  border-radius: 0 0 6px 6px;
+  display: block; /*inline-block se  voglio che si adatti al testo*/
+  box-sizing: border-box;
+  white-space: pre-wrap; /*formattazione del testo*/
+  position: relative;
+  overflow-x: hidden;
+}
+
+.codebar{
+  max-width: 590px;
+  font-size: var(--Text-Size);
+  font-family: "Consolas";
+  color: var(--Text-Color);  
+  padding-left:5px;
+  padding-right: 5px;
+  background-color: var(--Background-Color);
+  border-radius: 6px 6px 0 0;
+  width: calc(100% - 10px);
+  height: 23px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  white-space: pre-wrap; /*formattazione del testo*/
+  position: relative;
+  overflow-x: hidden;
+}
+
+.CodeButton{
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+  position: absolute;
+  background-color: transparent;
+  right: 0px;
+  word-spacing: -6px;
+  width: 104px;
+  height: 23px;
+  margin:none;
+  padding: none;
+  border: none;
+  font-size: var(--Text-Size);
+  font-family: "Consolas";
+  color: var(--Text-Color);  
+  cursor: pointer;
+}
+
+
+.CopyTxt {
+  visibility: hidden;
+  bottom: 90px;
+  height: 32px;
+  width: 80px;
+  z-index: 1000;
+  position: fixed;
+  border: none;
+  font-size: var(--Text-Size);
+  font-family: var(--Font-Family);
+  color: transparent;
+  background-color: transparent;
+  border-radius: 4px;
+  transition: 0.4s;
+}
+
+#HideImg {
+  opacity: 0; 
+  transition: 0.4s;
+}
+#AudioIMG{
+  opacity: 0; 
+  transition: 0.4s;
+}
+
+#HideText{
+  color:transparent;
+  transition: .4s;
+  text-align: right;
+}
+
+ 
+
+#CopyDiv{
+  position: fixed;
+  left:calc(50% - 130px);
+  z-index: 1000;
+  bottom:90px;
+  height:32px; 
+  width:260px; 
+}
+
+#CopyDiv:hover * {
+  background-color: var(--Widget-Color);
+  color: var(--Text-Color);
+  fill: var(--Text-Color);
+  opacity: 1;
+}
+
+ #Copy:active, #Txt:active, #Speak:active{
+  border-radius: 30px;
+ }
+
+ #Copy:hover, #Txt:hover, #Speak:hover{
+  box-shadow: 0 0 0 1px var(--Detail-Color);
+ }
+
+/* -------------------------------------------------------------------------- */
+/* ------------------------------ Scrollbar div ----------------------------- */
+/* -------------------------------------------------------------------------- */
+
+/* --------------------- design scrollbar for every div --------------------- */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/*slide*/
+::-webkit-scrollbar-track {
+  background-color:transparent;
+}
+
+/*slider*/
+::-webkit-scrollbar-thumb {
+  background-color: var(--Text-Color);
+  border-radius: 20px;
+}
+
+::-webkit-scrollbar-corner {
+  background: transparent
+}
+
+/* -------------------------------------------------------------------------- */
+/* ------------------------------ Menu Button ------------------------------- */
+/* -------------------------------------------------------------------------- */
+
+:root {
+  --bar-width: 25px;
+  --bar-height: 4px;
+  --background: var(--Text-Color);
+  --hamburger-gap: 4px;
+  --hamburger-margin: 10px;
+  --animation-timing: 500ms ease;
+  --border-radius:3px;
+  }
+
+/* ------------------- Button nel main per aprire il menu ------------------- */
+#hamburger-menu{
+  position:absolute;
+  width: var(--bar-width);
+  height: 20px;
+  padding: none;
+  border: none;
+  outline:none;
+  margin: none;
+  top: 41px;
+  left: var(--margin-size);
+  box-shadow: none;
+  border: 0;
+  z-index: 30;
+  background-color: transparent;
+}
+#topBar{
+  width:100%;
+  height:var(--bar-height);
+  background-color: var(--Text-Color);
+  border-radius: var(--border-radius);
+  position:absolute;
+  top:0;
+  left:0;
+}
+#midBar{
+  width:100%;
+  height:var(--bar-height);
+  background-color: var(--Text-Color);
+  border-radius: var(--border-radius);
+  position:absolute;
+  top: calc(2*var(--hamburger-gap));
+  left:0;
+}
+#bottomBar{
+  width:100%;
+  height:var(--bar-height);
+  background-color: var(--Text-Color);
+  border-radius: var(--border-radius);
+  position:absolute;
+  bottom:0;
+  left:0;
+}
+
+/* --------------------- La sidebar è dove c'è il  menu --------------------- */
+#sidebar{
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  transition: translate var(--animation-timing);
+  translate:-120%;
+  background-color: var(--Background-Color);
+  z-index: 25;
+  padding:0;
+}
+
+/* ------------------------------- Animazioni ------------------------------- */
+@keyframes before_translate {
+  0% {
+    translate: 0px 0px; 
+  }
+  50% {
+    translate: 0px calc( var(--hamburger-gap) + var(--bar-height));
+  }
+  50% {
+    rotate: 0deg;
+  }
+  100% {
+    rotate: -45deg;
+    translate: 0px calc( (var(--hamburger-gap) + var(--bar-height))
+    );
+  }
+}
+
+@keyframes before_translate_back {
+  0% {
+    rotate: -45deg;
+    translate: 0px calc( (var(--hamburger-gap) + var(--bar-height))
+    );
+  }
+  50% {
+    translate: 0px calc( var(--hamburger-gap) + var(--bar-height));
+  }
+  50% {
+    rotate: 0deg;
+  }
+  100% {
+    translate: 0px 0px;
+  }
+}
+
+@keyframes after_translate {
+  0% {
+    translate: 0px 0px; 
+  }
+  50% {
+    translate: 0px calc( -1*(var(--hamburger-gap) + var(--bar-height)));
+  }
+  50% {
+    rotate: 0deg;
+  }
+  100% {
+    rotate: 45deg;
+    translate: 0px calc( -1*(var(--hamburger-gap) + var(--bar-height))
+    );
+  }
+}
+
+@keyframes after_translate_back {
+  0% {
+ 
+
+    rotate: 45deg;
+    translate: 0px calc( -1*(var(--hamburger-gap) + var(--bar-height))
+    );
+  }
+  50% {
+    translate: 0px calc( -1*(var(--hamburger-gap) + var(--bar-height)));
+  }
+  50% {
+    rotate: 0deg;
+  }
+  100% {
+    translate: 0px 0px; 
+ 
+  }
+}
+
+@keyframes middle_press {
+  0% {
+    width: 100%;
+    transform: translateX(0) scaleX(1);
+  }
+  100% {
+    width: 0;
+    transform: translateX(50%) scaleX(0);
+  }
+}
+
+@keyframes middle_press_back {
+  0% {
+    width: 0%;
+    transform: translateX(100%) scaleX(0);
+    transform-origin: right;
+  }
+  100% {
+    width: 100%;
+    transform: translateX(0) scaleX(1);
+    transform-origin: left;
+  }
+}
+
+@keyframes MenuOut {
+  0% {
+    translate: -120% 0;
+  }
+  100% {
+    translate: 0 0;
+  }
+}
+
+@keyframes MenuIn {
+  0% {
+    translate: 0 0;
+  }
+  100% {
+    translate: -120% 0;
+  }
+}
+
+/* -------------------------------------------------------------------------- */
+/* ------------------------------ OnTop button ------------------------------ */
+/* -------------------------------------------------------------------------- */
+
+/* --------- è il pulsante per far stare la finestra in primo piano --------- */
+
+#PinOtTop_Button{
+  position:absolute;
+  width:20px;
+  height: 20px;
+  padding:none;
+  border: none;
+  outline:none;
+  margin: none;
+  top: 41px;
+  right: var(--margin-size);
+  box-shadow: none;
+  border: 0;
+  background-color: transparent;
+  z-index: 30;
+}
+
+#FirstSquare{
+  display: inline-block;
+  background-color:var(--Text-Color);
+  width: 20px;
+  height: 20px;  
+  position: absolute;
+  left:0;
+  bottom:0;  
+  border-radius: 5px;    
+}
+
+#SecondSquare{
+  display: inline-block;
+  background-color:var(--Detail-Color);
+  width: 20px;
+  height: 20px;  
+  position: absolute;
+  left: 4px;
+  bottom: 4px;  
+  border-radius: 4px;    
+}
+
+@keyframes FirstOut{
+
+  0% {
+    translate: 0 0;
+  }
+  50%{
+    translate: -8px 8px;
+    z-index: 12;
+  }
+  51%{
+    z-index: 10;
+  }
+  100% {
+    translate: 0 0;
+    z-index: 10;
+  }
+
+}
+
+@keyframes FirstIn{
+
+  0% {
+    translate: 0 0;
+    z-index: 10;
+  }
+  50%{
+    translate: -8px 8px;
+    z-index: 10;
+  }
+  51%{
+    z-index: 12;
+  }
+  100% {
+    translate: 0 0;
+    z-index: 12;
+  }
+}
+
+@keyframes SecondOut{
+
+  0% {
+    translate: 0 0;
+  }
+  50%{
+    translate: 8px -8px;
+    z-index: 10;
+  }
+  51%{
+    z-index: 12;
+  }
+  100% {
+    translate: 0 0;
+    z-index: 12;
+  }
+
+}
+
+@keyframes SecondIn{
+
+  0% {
+    translate: 0 0;
+    z-index: 12;
+  }
+  50%{
+    translate: 8px -8px;
+    z-index: 12;
+  }
+  51%{
+    z-index: 10;
+  }
+  100% {
+    translate: 0 0;
+    z-index: 10;
+  }
+}
+
+/* -------------------------------------------------------------------------- */
+/* ------------------------------- Stop Button ------------------------------ */
+/* -------------------------------------------------------------------------- */
+
+/* --------- è il pulsante in basso per interrompere la generazione --------- */
+
+#StopButton{
+  width:42px;
+  height:42px;
+  outline:none;
+  position: absolute;
+  right:var(--margin-size);
+  bottom:var(--margin-size);
+  z-index:0;
+  border-radius: var(--Border-Radius);
+  background-color: var(--Widget-Color);
+  border:none;
+  padding-top: 4px;
+  margin:0px;
+}
+
+@keyframes Show_Button{
+  0% {
+    width: calc(100% - 2*var(--margin-size) - 20px);
+  }
+
+  100% {
+    width: calc(100% - 2*var(--margin-size) - 70px) ;
+  }
+}
+
+@keyframes Hide_Button{
+  0% {
+    width: calc(100% - 2*var(--margin-size) - 70px);
+  }
+
+  100% {
+    width: calc(100% - 2*var(--margin-size) - 20px);
+  }
+}
+
+
+/* -------------------------------------------------------------------------- */
+/* ---------------------------- Loading animation --------------------------- */
+/* -------------------------------------------------------------------------- */
+
+#loader {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  border: 4px solid;
+  border-color: #FFF #FFF transparent;
+  box-sizing: border-box;
+  animation: none;
+}
+#loader::after {
+  content: '';  
+  box-sizing: border-box;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  border: 4px solid;
+  border-color: transparent var(--Accent-Color) var(--Accent-Color);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  animation: none;
+  transform-origin: center center;
+  rotate: 0deg;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+} 
+
+@keyframes rotationb {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+} 
+
+@keyframes rotationAfter {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+} 
+
+@keyframes rotationbAfter {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+} 
+
+/* -------------------------------------------------------------------------- */
+/* ---------------------------------- Menu ---------------------------------- */
+/* -------------------------------------------------------------------------- */
+
+/* --------------------- Qui definisco le tabs del menu --------------------- */
+.tabs {
+    display: flex; /*elementi posizionati in riga di default*/
+    position:fixed;
+    bottom:0;
+    left: 0;
+    right: 0;
+    width: auto;
+    height: 60px;
+    background-color: var(--Widget-Color) ;
+    border-radius: var(--Border-Radius) var(--Border-Radius) 0 0;
+  }
+  
+  .tabs * {  /* * vuol dire che questa proprietà è applicata anche agli elementi dentro le tabs*/
+    z-index: 2;
+  }
+  
+
+/* -------------------------------------------------------------------------- */
+/* ------------------------------- Menu Navbar ------------------------------ */
+/* -------------------------------------------------------------------------- */
+
+  .MenuNavbar input[type="radio"] {
+    display: none; /* toglie il pallino */
+  }
+  
+  /* ---------- Da non confondere con tabs, sono le tab della navbar ---------- */
+  .tab {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60px;
+    width: 25%;
+    font-size: var(--Text-Size);
+    
+    border-radius: var(--Border-Radius);
+    cursor: pointer;
+    transition: color 0.15s ease-in;
+  }
+  
+  /* ------------------- La navbar è formata da radio button ------------------ */
+  /* -------- Se uno viene checked, allora selezioni l'elemento glider -------- */
+  /* ----------------------- e gli applico un transform ----------------------- */
+
+  .MenuNavbar input[id="radio-1"]:checked ~ .glider {
+    transform: translateX(0);
+  }
+  
+  .MenuNavbar input[id="radio-2"]:checked ~ .glider {
+    transform: translateX( calc(100% + 20px) );
+  }
+  
+  .MenuNavbar input[id="radio-3"]:checked ~ .glider {
+    transform: translateX( calc(200% + 40px));
+  }
+  
+  .MenuNavbar input[id="radio-4"]:checked ~ .glider {
+    transform: translateX( calc(300% + 60px));
+  }
+  
+  .glider {
+    position: absolute;
+    display: flex;
+    margin-top: 12px;
+    margin-left: 10px;
+    height: 36px;
+    width: calc(25% - 20px);
+    background-color: var(--Accent-Color);
+    z-index: 1;
+    border-radius: var(--Border-Radius);
+    transition: 0.25s ease-out;
+  }
+
+  .IconsSvg{
+    fill: var(--Text-Color);
+  }
+
+  .TitleBarIcon{
+    stroke:white;
+  }
+  
+
+/* -------------------------------------------------------------------------- */
+/* ---------------------------------- Menu ---------------------------------- */
+/* -------------------------------------------------------------------------- */
+
+/* Definisco le variabili in Menu General e definisco il menu (aside element), negli altri definisco le finestre delle varie sezioni */
+
+.MenuGeneral{
+    position:absolute;
+    width: calc(100% - 40px); 
+    left: var(--margin-size); 
+    right: var(--margin-size); 
+    top:60px;
+    bottom:60px;
+    overflow-y: auto; 
+    background-color: transparent;
+  }
+  
+  #Menu-Div{
+    display: block;
+    
+  }
+  
+  #Prompt-Div{
+    display:none;
+    border-color:red;
+  }
+  
+  #Palette-Div{
+    display:none;
+    border: none;
+  }
+  
+  #Info-Div{
+    display:none;
+  }
+  
+  /* ------------------------- è la riga a fono pagina ------------------------ */
+  .divider{
+    background-color: var(--Widget-Color);
+  }
+
+
+  /* -------------------------------------------------------------------------- */
+  /* --------------------------- Info hot to get API -------------------------- */
+  /* -------------------------------------------------------------------------- */
+
+  #infoButton, #ApiText{
+    background-color: var(--Widget-Color);
+    border: none;
+    color: var(--Text-Color);
+    outline:none;
+    transition:.4s;
+   }
+  
+   #infoButton:hover #ApiText{
+    color: var(--Accent-Color);
+   }
+
+/* -------------------------------------------------------------------------- */
+/* ---------------------------- InputBox dei menu --------------------------- */
+/* -------------------------------------------------------------------------- */
+
+  .Menu_InputBox{
+    position:relative;
+    left:0;
+    width:100%;
+    height: 40px;
+    outline: none;
+    border:none;
+    font-size: var(--Text-Size);
+    font-weight:var(--Font-Weight);
+    font-family: var(--Font-Family);
+    color: var(--Text-Color);    
+    padding-left: 10px;
+    padding-right: 10px;
+    background: transparent;
+    transition: .4s;
+  }
+  
+  .Menu_InputBox:focus{
+    color: var(--Text-Color);
+  }
+
+  .katex-html{
+    border:none;
+  }
+
+/* ------------------------------ DA RIMUOVERE ------------------------------ */
+  .border-input-container {
+    position: fixed;
+    outline: none;
+    border:none;
+    border-radius: var(--Border-Radius);
+    overflow: hidden; 
+    background-color: var(--Widget-Color);
+    padding-right:10px;
+    box-shadow: 0 0 0 1px transparent;
+    
+  }
+
+  .border-input-container::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+    background: transparent;
+  }
+  
+  .border-input-container:hover {
+    box-shadow: 0 0 0 1px var(--Detail-Color);
+  }
+  
+  .border-input-container:hover::after {
+    background: transparent;
+  }
+  
+  /* -------------------------------------------------------------------------- */
+  /* --------------------------------- Button --------------------------------- */
+  /* -------------------------------------------------------------------------- */
+  
+  .Menubutton {
+    position:fixed;
+    background-color: var(--Widget-Color);
+    color: var(--Text-Color);
+    border: var(--Widget-Color) solid 2px;
+    border-radius: var(--Border-Radius);
+    height: 40px;
+    transition: 0.3s;
+    outline:none;
+    cursor: pointer;
+  }
+
+  .Menubutton_Confirm {
+    position:fixed;
+    background-color: var(--Accent-Color);
+    color: var(--Text-Color);
+    border: var(--Accent-Color) solid 2px;
+    border-radius: var(--Border-Radius);
+    height: 40px;
+    outline:none; 
+    transition: 0.3s;
+    cursor: pointer;
+  }
+  
+  .Menubutton:active, .Menubutton_Confirm:active{
+    border-radius: 30px;
+  }
+
+  .Menubutton:hover{
+    box-shadow: 0 0 0 1px var(--Detail-Color);
+  }
+
+  /* -------------------------------------------------------------------------- */
+  /* ----------------------------- Menu a Tendina ----------------------------- */
+  /* -------------------------------------------------------------------------- */
+
+  
+  .MenuSelector {
+    height: 42px;
+    width:100%;
+    border-radius: var(--Border-Radius);
+    background-color: transparent;
+    border:none;
+    padding:none;
+    outline: none;
+    transition: 300ms;
+    color: var(--Text-Color);
+    font-size: var(--Text-Size);
+  
+    cursor: pointer;
+    padding-left: 10px;
+  }
+  .MenuSelector::after{
+    right:-10px;
+  }
+  
+  /* Stile per le opzioni del menu a tendina */
+  .MenuSelectorOption {
+    background-color: var(--Widget-Color);
+    height: 40px;
+    width:100%;
+    box-shadow: 0 0 0 2px var(--Widget-Color);
+    color: var(--Text-Color);
+    font-size: var(--Text-Size);
+    cursor: pointer;
+  }
+  
+  .MenuSelector:hover{
+    box-shadow: 0 0 0 1px var(--Widget-Color);
+  }
+
+  /* Stile per l'opzione selezionata del menu a tendina */
+  .MenuSelectorOption:checked {
+    background-color: var(--Accent-Color);
+    color: var(--Text-Color);
+  }
+
+  /* -------------------------------------------------------------------------- */
+  /* --------------------------------- Slider --------------------------------- */
+  /* -------------------------------------------------------------------------- */
+
+  
+  .MenuSlider {
+    height: 5px;
+    border-radius: var(--Border-Radius);
+    background-color: var(--Detail-Color);
+    outline: none;
+    margin: none;
+    padding: none;
+  }
+   
+  .MenuSlider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: var(--Accent-Color);
+    cursor: pointer;
+
+  }
+  
+  /* -------------------------------------------------------------------------- */
+  /* -------------------------------- Checkbox -------------------------------- */
+  /* -------------------------------------------------------------------------- */
+
+  .MenuCheckbox{
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    outline:none;
+    border: 2px solid var(--Text-Color);
+    border-radius: 8px;
+    background-color: transparent;
+    display: inline-block;
+    position: relative;
+    margin-right: 10px;
+    cursor: pointer;
+  }
+  
+  .MenuCheckbox:before {
+    content: "";
+    background-color: var(--Text-Color);
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    width: 10px;
+    height: 10px;
+    border-radius: 4px;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .MenuCheckbox:checked:before {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  
+  /* ---------------------------------- Text ---------------------------------- */
+  
+  .MenuText, .Menu_InputBox::placeholder,.MenuSelector, .MenuSelectorOption{
+    font-size: var(--Text-Size);
+    font-family:var(--Font-Family);
+    font-weight:var(--Font-Weight);
+    color: var(--Text-Color);
+  }
+    
+  /* ------------------------------- Color Input ------------------------------ */
+  input[type="color"] {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 42px;
+    height: 44px;
+    background-color: transparent;
+    cursor: pointer;
+    border-radius: 50%;
+    border: none;
+  }
+  input[type="color"]::-webkit-color-swatch {
+    border-radius: 50%;
+    border: none;
+  }
+
+  #PaletteLabel{
+    margin:0px; 
+    height:38px;
+    display: flex;
+    align-items: center;
+    z-index: -1;
+  }
+
+  /* ----------------------------- Theme elements ----------------------------- */
+  .ColorButtons {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: left 0.3s ease;
+}
+
+.ColorSlider{
+  position: fixed;
+  display: flex;
+  left:16px;
+  width: 38px;
+  height: 38px;
+  background-color: transparent;
+  border-radius: 50%;
+  border: #d2d2d2 solid 2px;
+  display: flex;
+  transition: 0.25s ease-out;
+  pointer-events: none; 
+
+  --SpazioTraRadio:calc((100% - 32px - 204px)/5); /*(100% - 32px - 204px)/5 = valore di uno spazio*/
+}
+
+#Palette-Div input[id="radio-1-color"]:checked ~ .ColorSlider {
+  left:16px;
+}
+
+#Palette-Div input[id="radio-2-color"]:checked ~ .ColorSlider {
+  left: calc(var(--SpazioTraRadio) + 46.5px) ; 
+}
+
+#Palette-Div input[id="radio-3-color"]:checked ~ .ColorSlider {
+  left: calc(var(--SpazioTraRadio)*2 + 77.5px) ; 
+}
+
+#Palette-Div input[id="radio-4-color"]:checked ~ .ColorSlider {
+  left: calc(var(--SpazioTraRadio)*3 + 108.5px) ; 
+}
+
+#Palette-Div input[id="radio-5-color"]:checked ~ .ColorSlider {
+  left: calc(var(--SpazioTraRadio)*4 + 139.5px) ; 
+}
+
+#Palette-Div input[type="radio"] {
+    display: none;
+}

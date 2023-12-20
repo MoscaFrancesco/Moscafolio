@@ -110,8 +110,6 @@ e.addEventListener('mouseenter', () => {
 e.addEventListener('mouseleave', () => {
     cursor.removeSkewing();
 });
-
-
 }
 
 function initTextAnim(){
@@ -191,7 +189,6 @@ function Initheader(){
     opacity:1,
     duration: 0.5,
   });
-  
 }
 
 function showOnly(className,buddonIndex) {
